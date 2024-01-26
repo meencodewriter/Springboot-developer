@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 public class JUnitTest {
 
-    @DisplayName("1+2 = 3") // 테스트 이름
+    @DisplayName("1 + 2 = 3 ??") // 테스트 이름
     @Test// 테스트 메소드
     public void junitTest() {
         int a = 1;
@@ -14,5 +14,4 @@ public class JUnitTest {
         // JUnit 검증 메소드
         Assertions.assertEquals(sum, a + b);
     }
-
 }
