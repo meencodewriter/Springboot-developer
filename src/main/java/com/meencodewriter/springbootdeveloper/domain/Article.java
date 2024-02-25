@@ -26,11 +26,10 @@ public class Article {
     private  String content;
 
     @CreatedDate // 엔티티 생성 시 생성 시간 자동 저장
-    @Column(name = "created_at")
+    @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 
     @LastModifiedDate // 엔티티 수정 시 수정 시간 자동 저장
-    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
 
