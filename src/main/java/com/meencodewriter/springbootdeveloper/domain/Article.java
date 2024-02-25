@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import java.time.LocalDateTime;
 
 @Entity
 @NoArgsConstructor
@@ -20,6 +24,15 @@ public class Article {
 
     @Column(name = "content", nullable = false)
     private  String content;
+
+    @CreatedDate // 엔티티 생성 시 생성 시간 자동 저장
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+
+    @LastModifiedDate // 엔티티 수정 시 수정 시간 자동 저장
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
+
 
     @Builder
     public Article(String title, String content) {
