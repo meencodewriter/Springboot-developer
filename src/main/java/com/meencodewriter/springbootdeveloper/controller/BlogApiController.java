@@ -6,7 +6,7 @@ import com.meencodewriter.springbootdeveloper.dto.ArticleResponse;
 import com.meencodewriter.springbootdeveloper.dto.UpdateArticleRequest;
 import com.meencodewriter.springbootdeveloper.service.BlogService;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +15,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
+@Slf4j
 public class BlogApiController {
 
     private final BlogService blogService;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>블로그 글 목록</title>
@@ -13,7 +13,7 @@
 
 <div class="container">
     <button type="button" id="create-btn"
-            th:onclick="|location.href='@{/new-article}'|"
+            th:onclick="|location.href='@{/article/register}'|"
             class="btn btn-secondary btn-sm mb-3">글 등록</button>
     <div class="row-6" th:each="item : ${articles}">
         <div class="card">
