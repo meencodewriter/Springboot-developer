@@ -14,13 +14,11 @@ public class UserService {
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    public User save(AddUserRequest request) {
+    public void save(AddUserRequest request) {
         User newUser = User.builder()
                 .email(request.getEmail())
                 .password(bCryptPasswordEncoder.encode(request.getPassword()))
                 .build();
         userRepository.save(newUser);
-
-        return newUser;
     }
 }

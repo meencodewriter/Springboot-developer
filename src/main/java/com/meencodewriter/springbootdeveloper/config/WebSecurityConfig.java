@@ -15,9 +15,8 @@ import static org.springframework.boot.autoconfigure.security.servlet.PathReques
 
 @RequiredArgsConstructor
 @Configuration
-public class WebSercurityConfig {
+public class WebSecurityConfig {
     private final UserDetailService userDetailService;
-
 
     // 스프링 시큐리티의 인증절차를 미적용 하는 설정
     // 정적리소스 등을 조회할 때는 굳이 인증, 인가를 거칠 필요가 없음
@@ -31,24 +30,8 @@ public class WebSercurityConfig {
 
     // 특정 Http Request 에 대한 웹 기반 보안 설정
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-//                .authorizeRequests() // 인증, 인가 설정
-//                    .requestMatchers("login", "signup", "signin").permitAll() // 로그인, 회원가입, 로그아웃 페이지는 인증 없이 접근 가능
-//                    .anyRequest().authenticated() // 그 외의 페이지는 인증 필요
-//                    .and()
-//                .formLogin() // 로그인 페이지 설정
-//                    .loginPage("/login") // 로그인 페이지 경로
-//                    .defaultSuccessUrl("/articles") // 로그인 성공 후 이동할 페이지
-//                    .and()
-//                .logout() // 로그아웃 설정
-//                    .logoutSuccessUrl("/login") // 로그아웃 성공 후 이동할 페이지
-//                    .invalidateHttpSession(true) // 세션 무효화
-//                    .and()
-//                .csrf().disable() // csrf 보안 설정 미적용
-//                .build();
-//        이게 예제인데 nonLambda 식으로 빌드하는걸 deprecated 해버림 ( Spring security 6.1 부터인가 )
-//        그래서 이후로는 아래처럼 쓰면 됨
                 .authorizeHttpRequests(authorizationManagerRequestMatcherRegistry ->
                         authorizationManagerRequestMatcherRegistry
                                 .requestMatchers("/login", "/signup", "/user").permitAll()

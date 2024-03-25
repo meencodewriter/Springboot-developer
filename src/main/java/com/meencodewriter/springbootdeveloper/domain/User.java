@@ -72,6 +72,6 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         // 계정 사용가능 여부 반환
-        return false;
+        return true;
     }
 }

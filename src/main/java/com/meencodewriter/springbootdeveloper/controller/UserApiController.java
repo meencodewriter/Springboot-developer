@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 @Slf4j
 public class UserApiController {
-
     private final UserService userService;
 
 
@@ -25,7 +24,7 @@ public class UserApiController {
         log.info("Signup!!");
         log.info("request : {}", request);
         userService.save(request);
-        return "login";
+        return "redirect:/login";
     }
 
     @GetMapping("/logout")
